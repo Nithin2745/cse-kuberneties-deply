@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cse-kuberneties-deply
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: cse-kuberneties-deply
+  template:
+    metadata:
+      labels:
+        app: cse-kuberneties-deply
+    spec:
+      containers:
+      - name: cse-kuberneties-deply
+        image: 'nithinattili/cse-kuberneties-deply:latest'
+        ports:
+        - containerPort: 8085
